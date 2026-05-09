@@ -20,7 +20,7 @@ def generate_transaction():
         'timestamp': datetime.now().isoformat(),
     }
 
-for i in range(1000):
+for i in range(100):
     tx = generate_transaction()
     producer.send('transactions', value=tx)
     print(f"[{i+1}] {tx['tx_id']} | {tx['amount']:.2f} PLN | {tx['store']}")
